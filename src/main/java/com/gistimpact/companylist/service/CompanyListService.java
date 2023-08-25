@@ -16,7 +16,7 @@ public class CompanyListService {
     @Autowired
     private CompanyListRepository companyListRepository;
     public ResponseEntity<List<String>> getAllCompanies() {
-        List<Company> companies = companyListRepository.getAllCompanies();
+        List<Company> companies = companyListRepository.findAll();
         List<String> companyList=new ArrayList<>();
         for(Company company:companies){
             companyList.add(company.getCompanyName());
